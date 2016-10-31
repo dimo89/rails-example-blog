@@ -1,0 +1,15 @@
+<h1>All articles</h1>
+
+<% @articles.each do |artcl| %>
+    <ul>
+        <li><b><%= artcl.title %></b></li>
+        <li><i><%= artcl.text %></i></li>
+        <li><%= link_to 'Show', article_path(artcl) %></li>
+        <li><%= link_to 'Edit', edit_article_path(artcl) %></li>
+        <td><%= link_to 'Destroy', article_path(artcl),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </ul>
+<% end %>
+<%= link_to 'Home', controller: 'welcome' %> 
+<%= link_to 'New Article', new_article_path %>
